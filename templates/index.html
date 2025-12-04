@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Website Keren Saya</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
     {% if orang %}
-        <h1>Halo, {{ orang }}!</h1>
-        <p>Senang berkenalan dengan Anda.</p>
-        <a href="/"><button>Coba Nama Lain</button></a>
+        <img src="{{ url_for('static', filename='ngapain.jpg') }}" alt="my face"    class="logo-gambar">
+        <h1>Hmmmff, {{ orang }}!</h1>
+        <p>Ngapain Masss??</p>
+        <a href="/"><button>Ganti nama</button></a>
 
     {% else %}
-        <h1>Siapa nama anda</h1>
+        <img src="{{ url_for('static', filename='siapa.jpg') }}" alt="my face"  class="logo-gambar">
+        <h1>Siapa yaaa??</h1>
 
         <form method="POST">
             <input type="text" name="nama_input" placeholder="Ketik Nama disini...">
@@ -21,4 +25,5 @@
 
     {% endif %}
 </body>
+
 </html>

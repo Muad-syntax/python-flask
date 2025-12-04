@@ -35,3 +35,14 @@ input[type="text"]{
 input[type="text"]:focus {
     background-color: #eaf2f8;
 }
+
+.logo-gambar{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.863); 
+}
+
+@media screen {
+    
+}
