@@ -23,7 +23,15 @@
             <button type="submit">Kirim nama</button>
         </form>
 
+        <h3>Daftar Orang Iseng</h3>
+        <ul>
+            {% for p in daftar %}
+            <li>{{ p.nama }}</li>
+            {% endfor %}
+        </ul>
+
     {% endif %}
+
 </body>
 
 </html>

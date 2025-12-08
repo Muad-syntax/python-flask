@@ -43,6 +43,15 @@ input[type="text"]:focus {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.863); 
 }
 
-@media screen {
-    
+@media screen and (max-width: 600px){
+    .logo-gambar{
+        width: 200px;
+        height: 200px;
+    }
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
