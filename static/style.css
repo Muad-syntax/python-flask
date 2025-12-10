@@ -22,6 +22,66 @@ button:hover {
     background-color: #2980b9;
 }
 
+/* Container biar tabel rapi di tengah */
+.tabel-container {
+    width: 80%;
+    margin: 20px auto; /* Tengah secara horizontal */
+    text-align: center;
+}
+
+/* Styling Dasar Tabel */
+.tabel-keren {
+    width: 100%;
+    border-collapse: collapse; /* Supaya garis tabel menyatu rapi */
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Efek bayangan */
+}
+
+/* Styling Header (Judul Kolom) */
+.tabel-keren thead tr {
+    background-color: #009879; /* Warna hijau keren */
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Styling untuk setiap kotak (sel) */
+.tabel-keren th, 
+.tabel-keren td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd; /* Garis tipis */
+}
+
+/* Efek Zebra (Belang-belang) di baris */
+.tabel-keren tbody tr:nth-of-type(even) {
+    background-color: #049c2a;
+    color: #ffffff;
+}
+
+/* Efek baris terakhir ada garis tebal */
+.tabel-keren tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Tombol Hapus supaya terlihat seperti tombol beneran */
+.tombol-hapus {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.tombol-hapus:hover {
+    background-color: #cc0000;
+}
+
+a{
+    color: red;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
 input[type="text"]{
     padding: 15px;
     font-size: 18px;
