@@ -44,6 +44,17 @@ def hapus_data(id_pengunjung):
 
     return redirect("/")
 
+@app.route('/edit/<int:id_pengunjung>', methods=['GET', 'POST'])
+def edit_data(id_pengunjung):
+    data_yang_mau_di_edit = Pengunjung.query.get_or_404(id_pengunjung)
+    if request.method == 'POST':
+        nama_baru_diinput = request.form['nama_edit']
+        data_yang_mau_di_edit.nama = nama_baru_diinput
+        db.session.commit()
+
+        return redirect("/")
+    return redirect("/")
+
 @app.route("/ganti_nama")
 def ganti_nama():
     session.pop('orang_aktif', None)

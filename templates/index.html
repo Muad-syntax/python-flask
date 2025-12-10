@@ -44,6 +44,8 @@
                     <td>{{ loop.index }}</td>
                     <td>{{ p.nama }}</td>
                     <td>
+                        <button type="button" onclick="bukaModal('{{ p.id }}', '{{ p.nama }}')">Edit</button>
+                        
                         <a href="/hapus/{{ p.id }}" class="tombol-hapus">Hapus</a>
                     </td>
                 </tr>
@@ -51,6 +53,21 @@
             </tbody>
         </table>
     </div>
+
+    <div id="modalEdit" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close" onclick="tutupModal()">&times;</span>
+            <h2>Edit Nama Pengunjung</h2>
+
+            <form id="formEdit" method="POST">
+                <label for="nama_edit">Ubah Nama:</label><br><br>
+                <input type="text" name="nama_edit" id="inputNama" style="width: 100%; padding: 8px;" required> <br><br>
+                <button type="submit">Simpan Perubahan</button>
+                <button type="button" onclick="tutupModal()" style="background-color: #ccc;">Batal</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script,js') }}"></script>
 </body>
 
 </html>
