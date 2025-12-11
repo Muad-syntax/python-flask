@@ -12,7 +12,7 @@
         <img src="{{ url_for('static', filename='ngapain.jpg') }}" alt="my face"    class="logo-gambar">
         <h1>Hmmmff, {{ orang }}!</h1>
         <p>Ngapain Masss??</p>
-        <a href="/"><button>Ganti nama</button></a>
+        <a href="/ganti_nama"><button>Tambah Pengunjung</button></a>
 
     {% else %}
         <img src="{{ url_for('static', filename='siapa.jpg') }}" alt="my face"  class="logo-gambar">
@@ -23,15 +23,51 @@
             <button type="submit">Kirim nama</button>
         </form>
 
+        
+        {% endif %}
+        
+    <div class="tabel-container">
         <h3>Daftar Orang Iseng</h3>
-        <ul>
-            {% for p in daftar %}
-            <li>{{ p.nama }}</li>
-            {% endfor %}
-        </ul>
 
-    {% endif %}
+        <table class="tabel-keren">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Pengunjung</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
 
+            <tbody>
+                {% for p in daftar %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ p.nama }}</td>
+                    <td>
+                        <button type="button" onclick="bukaModal('{{ p.id }}', '{{ p.nama }}')">Edit</button>
+                        
+                        <a href="/hapus/{{ p.id }}" class="tombol-hapus">Hapus</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modalEdit" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close" onclick="tutupModal()">&times;</span>
+            <h2>Edit Nama Pengunjung</h2>
+
+            <form id="formEdit" method="POST">
+                <label for="nama_edit">Ubah Nama:</label><br><br>
+                <input type="text" name="nama_edit" id="inputNama" style="width: 100%; padding: 8px;" required> <br><br>
+                <button type="submit">Simpan Perubahan</button>
+                <button type="button" onclick="tutupModal()" style="background-color: #ccc;">Batal</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script,js') }}"></script>
 </body>
 
 </html>

@@ -1,0 +1,21 @@
+# --- Python Umum ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual Environment (Supaya folder env tidak ikut di-upload) ---
+env/
+venv/
+.venv/
+
+# --- Flask & Database ---
+instance/
+*.db
+*.sqlite3
+
+# --- Environment Variables (Kunci rahasia) ---
+.env
+
+# --- VS Code Settings (Opsional, biar settingan editor tidak ikut) ---
+.vscode/

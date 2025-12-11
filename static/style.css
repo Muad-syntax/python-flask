@@ -22,6 +22,66 @@ button:hover {
     background-color: #2980b9;
 }
 
+/* Container biar tabel rapi di tengah */
+.tabel-container {
+    width: 80%;
+    margin: 20px auto; /* Tengah secara horizontal */
+    text-align: center;
+}
+
+/* Styling Dasar Tabel */
+.tabel-keren {
+    width: 100%;
+    border-collapse: collapse; /* Supaya garis tabel menyatu rapi */
+    margin-top: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Efek bayangan */
+}
+
+/* Styling Header (Judul Kolom) */
+.tabel-keren thead tr {
+    background-color: #009879; /* Warna hijau keren */
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Styling untuk setiap kotak (sel) */
+.tabel-keren th, 
+.tabel-keren td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd; /* Garis tipis */
+}
+
+/* Efek Zebra (Belang-belang) di baris */
+.tabel-keren tbody tr:nth-of-type(even) {
+    background-color: #049c2a;
+    color: #ffffff;
+}
+
+/* Efek baris terakhir ada garis tebal */
+.tabel-keren tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Tombol Hapus supaya terlihat seperti tombol beneran */
+.tombol-hapus {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.tombol-hapus:hover {
+    background-color: #cc0000;
+}
+
+a{
+    color: red;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
 input[type="text"]{
     padding: 15px;
     font-size: 18px;
@@ -42,6 +102,39 @@ input[type="text"]:focus {
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.863); 
 }
+
+/* Latar belakang gelap (overlay) */
+  .modal-overlay {
+    display: none; /* Tersembunyi secara default */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); /* Hitam transparan */
+  }
+
+  /* Kotak konten modal */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% dari atas, rata tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Lebar kotak */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* Tombol tutup (X) */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
 @media screen and (max-width: 600px){
     .logo-gambar{
