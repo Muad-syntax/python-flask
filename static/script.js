@@ -5,7 +5,7 @@ function bukaModal(id, namaLama){
 
     modal.style.display = "block";
     input.value = namaLama;
-    form.action = "/edit" + id;
+    form.action = "/edit/" + id;
 }
 
 function tutupModal(){
@@ -18,3 +18,13 @@ window.onclick = function(event){
         modal.style.display = "none"
     }
 }
+
+setTimeout(function(){
+    let alerts = document.querySelectorAll('.alert')
+    alerts.forEach(function(a){
+        a.style.transition = "opacity 0.5s ease";
+        a.style.opacity = "0";
+        setTimeout(() => a.remove(), 500);
+        
+    });
+}, 3000);

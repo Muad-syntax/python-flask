@@ -8,6 +8,16 @@
 
 <body>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert aler-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     {% if orang %}
         <img src="{{ url_for('static', filename='ngapain.jpg') }}" alt="my face"    class="logo-gambar">
         <h1>Hmmmff, {{ orang }}!</h1>
@@ -67,7 +77,7 @@
             </form>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='script,js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>

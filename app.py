@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -30,8 +30,10 @@ def halaman_utama():
         db.session.add(data_baru)
         db.session.commit()
         session['orang_aktif'] = nama_dari_form
+        flash("Data pengunjung berhasil ditambahkan!", "success")
+        return redirect("/")       
     orang_saat_ini = session.get('orang_aktif', None)
-    list_pengunjung = Pengunjung.query.all()        
+    list_pengunjung = Pengunjung.query.all() 
 
     return render_template("index.html", daftar=list_pengunjung, orang=orang_saat_ini)
 
@@ -41,7 +43,7 @@ def hapus_data(id_pengunjung):
     if data_yang_mau_dihapus:
         db.session.delete(data_yang_mau_dihapus)
         db.session.commit()
-
+        flash("Data berhasil dihapus!", "danger")
     return redirect("/")
 
 @app.route('/edit/<int:id_pengunjung>', methods=['GET', 'POST'])
@@ -51,7 +53,7 @@ def edit_data(id_pengunjung):
         nama_baru_diinput = request.form['nama_edit']
         data_yang_mau_di_edit.nama = nama_baru_diinput
         db.session.commit()
-
+        flash("perubahan berhasil disimpan!", "info")
         return redirect("/")
     return redirect("/")
 
@@ -59,6 +61,9 @@ def edit_data(id_pengunjung):
 def ganti_nama():
     session.pop('orang_aktif', None)
     return redirect("/")
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
